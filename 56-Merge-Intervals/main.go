@@ -13,6 +13,9 @@ func main() {
 }
 
 func merge(intervals [][]int) [][]int {
+	if len(intervals) <= 1 {
+		return intervals
+	}
 	sort.Slice(intervals, func(i, j int) bool {
 		if intervals[i][0] <= intervals[j][0] {
 			return true
